@@ -1,3 +1,4 @@
+/* reset & base */
 html {
   box-sizing: border-box;
 }
@@ -17,9 +18,10 @@ html {
   max-width: 1222px;
   margin: 0 auto;
 }
+
 /* header */
 header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -41,68 +43,47 @@ header {
   background-color: #e9ded4;
   padding-top: 124px;
 }
-/* TODO: продумать как смешивать с фоном */
-/* height: 100vh; */
-/* background-image: url(../assets/icons/background.svg);
-  background-repeat: no-repeat;
-  background-size: cover; */
-/* mix-blend-mode: color-burn; */
 
 .intro_title {
   font-family: "Merriweather", serif;
-  font-style: normal;
-
   font-weight: 400;
   font-size: 60px;
   line-height: 110%;
-
   margin-bottom: 24px;
 }
+
 .intro_top,
 .intro_centre,
 .intro_bottom {
   display: block;
-}
-
-.intro_top {
-  max-width: 542px;
   text-transform: uppercase;
   font-feature-settings:
     "pnum" on,
     "lnum" on;
+}
+
+.intro_top {
+  max-width: 542px;
 }
 
 .intro_centre {
   max-width: 347px;
   margin-left: 104px;
   text-align: right;
-  text-transform: uppercase;
-  font-feature-settings:
-    "pnum" on,
-    "lnum" on;
 }
 
 .intro_bottom {
   max-width: 542px;
   text-align: right;
-  text-transform: uppercase;
-  font-feature-settings:
-    "pnum" on,
-    "lnum" on;
 }
 
 .intro_description {
   font-family: "Golos Text", sans-serif;
-  font-style: normal;
-
   font-weight: 400;
   font-size: 18px;
   line-height: 130%;
-
   margin-bottom: 40px;
-
   max-width: 542px;
-
   text-align: center;
   font-feature-settings:
     "pnum" on,
@@ -111,29 +92,23 @@ header {
 
 .intro_buttons {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0px;
   gap: 16px;
+  align-items: center;
 }
 
 .button_left,
 .button_right {
   cursor: pointer;
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 130%;
-
   width: 263px;
   height: 72px;
-
   border-radius: 66px;
 }
 
 .button_left {
   border: none;
-
   color: #ffffff;
   background: #1f1f1f;
 }
@@ -144,14 +119,13 @@ header {
 }
 
 .button_left:hover {
-  border: none;
   background: #fbce51;
   color: #1f1f1f;
 }
 
 .button_right:hover {
   background: #1f1f1f;
-  border: 2px solid #1f1f1f;
+  border-color: #1f1f1f;
   color: #ffffff;
 }
 
@@ -159,9 +133,8 @@ header {
   position: absolute;
   width: 660px;
   height: 660px;
-  left: 951px;
+  right: 0;
   top: -44px;
-
   background: #fbce51;
   border-radius: 50%;
 }
@@ -173,6 +146,20 @@ header {
   mix-blend-mode: overlay;
 }
 
+@media (max-width: 1600px) {
+  .ellipse {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ellipse {
+    width: 300px;
+    height: 300px;
+    right: -150px;
+  }
+}
 @keyframes ticker {
   from {
     transform: translateX(0);
@@ -184,17 +171,160 @@ header {
 
 .running_line {
   padding: 18px 12px;
-  position: relative;
   height: 60px;
-  font-family: "Merriweather";
-  font-style: normal;
+  font-family: "Merriweather", serif;
   font-weight: 400;
   font-size: 22px;
   line-height: 110%;
-
   color: #ffffff;
   background: #f54932;
-
   width: max-content;
   animation: ticker 60s linear infinite;
+}
+
+/* tournament_participants */
+.tournament_participants {
+  background-color: #ffffff;
+  padding: 140px 0;
+}
+
+.participants_header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 60px;
+}
+
+.participants_title {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-size: 54px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #313131;
+  margin: 0;
+}
+
+.participants_pagination {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.pagination_arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #313131;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination_arrow:hover {
+  background: #fbce51;
+}
+
+.pagination_arrow:disabled {
+  background: #d6d6d6;
+  cursor: not-allowed;
+}
+
+.pagination_count {
+  font-family: "Golos Text", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #313131;
+}
+
+.participants_carousel {
+  overflow: hidden;
+  position: relative;
+}
+
+.participants_cards {
+  display: flex;
+  transition: transform 0.3s ease;
+  will-change: transform;
+  gap: 20px;
+}
+
+.participant_card {
+  flex: 0 0 calc((100% - 40px) / 3);
+  background: #ffffff;
+  border-radius: 24px;
+  text-align: center;
+  transition: transform 0.2s;
+  box-sizing: border-box;
+}
+
+.card_photo {
+  width: 320px;
+  height: 320px;
+  margin: 0 auto 28px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.card_photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card_name {
+  font-family: "Golos Text", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+  color: #313131;
+  margin-bottom: 6px;
+}
+
+.card_title {
+  font-family: "Golos Text", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  color: #313131;
+  opacity: 0.6;
+  margin-bottom: 20px;
+}
+
+.card_button {
+  background: transparent;
+  width: 113px;
+  height: 35px;
+  border: 1px solid #3057a2;
+  border-radius: 62px;
+  font-family: "Golos Text", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
+  color: #3057a2;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.card_button:hover {
+  background: #3057a2;
+  color: #ffffff;
+}
+
+/* description footer */
+.description p {
+  margin: 40px 0 72px;
+  font-family: "Golos Text", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: #313131;
+  opacity: 0.6;
 }

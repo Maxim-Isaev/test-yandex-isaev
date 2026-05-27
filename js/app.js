@@ -1,8 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
   const cardsContainer = document.getElementById("participantsCards");
-  const prevButton = document.getElementById("participantsPrev");
-  const nextButton = document.getElementById("participantsNext");
-  const counterSpan = document.getElementById("participantsCounter");
+  let prevButton, nextButton, counterSpan;
+
+  function updateControlReferences() {
+    const isMobile = window.innerWidth <= 768;
+
+    prevButton = isMobile
+      ? document.getElementById("participantsPrevMobile")
+      : document.getElementById("participantsPrev");
+
+    nextButton = isMobile
+      ? document.getElementById("participantsNextMobile")
+      : document.getElementById("participantsNext");
+
+    counterSpan = isMobile
+      ? document.getElementById("participantsCounterMobile")
+      : document.getElementById("participantsCounter");
+  }
+
+  updateControlReferences();
 
   if (!cardsContainer || !prevButton || !nextButton || !counterSpan) return;
 
@@ -87,6 +103,15 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
+      const oldPrev = prevButton;
+      const oldNext = nextButton;
+      updateControlReferences();
+      if (oldPrev !== prevButton) {
+        oldPrev?.removeEventListener("click", manualPrevSlide);
+        oldNext?.removeEventListener("click", manualNextSlide);
+        prevButton?.addEventListener("click", manualPrevSlide);
+        nextButton?.addEventListener("click", manualNextSlide);
+      }
       updateCarousel();
       resetAutoTimer();
     }, 150);

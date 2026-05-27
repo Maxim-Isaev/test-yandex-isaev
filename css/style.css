@@ -123,17 +123,6 @@ header {
   border: 2px solid #1f1f1f;
 }
 
-.button_left:hover {
-  background: #fbce51;
-  color: #1f1f1f;
-}
-
-.button_right:hover {
-  background: #1f1f1f;
-  border-color: #1f1f1f;
-  color: #ffffff;
-}
-
 .button_left span,
 .button_right span {
   max-width: 165px;
@@ -438,6 +427,11 @@ header {
   grid-row: span 2;
 }
 
+.stages-grid-mobile .stages_grid,
+.stages-grid-mobile .stages_plane {
+  display: none;
+}
+
 .stages_plane {
   position: absolute;
   bottom: 4px;
@@ -496,10 +490,6 @@ header {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-}
-
-.pagination_arrow:hover {
-  background: #fbce51;
 }
 
 .pagination_arrow:disabled {
@@ -584,11 +574,6 @@ header {
   transition: all 0.2s;
 }
 
-.card_button:hover {
-  background: #3057a2;
-  color: #ffffff;
-}
-
 /* description footer */
 .description {
   background: #e9ded4;
@@ -622,6 +607,29 @@ header {
 
 .details-list-mobile {
   display: none;
+}
+
+/* ===== ДЛЯ УСТРОЙСТВ ПОДДЕРЖИВАЮЩИЕ КУРСОР ===== */
+@media (hover: hover) and (pointer: fine) {
+  .card_button:hover {
+    background: #3057a2;
+    color: #ffffff;
+  }
+
+  .pagination_arrow:hover {
+    background: #fbce51;
+  }
+
+  .button_left:hover {
+    background: #fbce51;
+    color: #1f1f1f;
+  }
+
+  .button_right:hover {
+    background: #1f1f1f;
+    border-color: #1f1f1f;
+    color: #ffffff;
+  }
 }
 
 /* ===== АДАПТИВ ДЛЯ ТЕЛЕФОНОВ (до 768px) ===== */
@@ -829,7 +837,7 @@ header {
 
   .stages_plane {
     position: absolute;
-    bottom: 297px;
+    bottom: 288px;
     right: -22px;
     width: 380px;
     z-index: 2;
@@ -847,6 +855,7 @@ header {
     background-blend-mode: color-burn, normal;
     padding: 62px 24px 34px 20px;
     box-sizing: border-box;
+    background-size: cover;
   }
   .stages-mobile-cards .stage_card.wide {
     grid-column: auto;
@@ -873,9 +882,12 @@ header {
     cursor: pointer;
     transition: background 0.2s;
   }
-  /* .stages-mobile-arrow:hover {
-    background: #fbce51;
-  } */
+
+  .stages-grid-mobile .stages_grid,
+  .stages-grid-mobile .stages_plane {
+    display: block;
+  }
+
   .stages-mobile-arrow:disabled {
     background: #d6d6d6;
     cursor: not-allowed;
@@ -979,7 +991,13 @@ header {
     padding-bottom: 16px;
     border-bottom: 2px solid #d0d0d0;
   }
+
+  .detail-item-mobile.row {
+    flex-direction: row;
+  }
+
   .detail-item-mobile:last-child {
+    flex-direction: column;
     border-bottom: none;
   }
 

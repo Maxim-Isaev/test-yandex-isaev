@@ -21,9 +21,7 @@
     <header class="header">
       <div class="container">
         <div class="header_container">
-          <div class="header_logo">
-            <img src="./assets/icons/logo.svg" alt="Клуб четырех коней" />
-          </div>
+          <img src="./assets/icons/logo.svg" alt="Клуб четырех коней" />
         </div>
       </div>
     </header>
@@ -68,6 +66,7 @@
           ЗАСЕДАТЕЛИ!&ensp;•&ensp;</span
         >
       </div>
+
       <section class="support_tournament">
         <div class="container support_tournament-container">
           <div class="support_tournament-text">
@@ -77,13 +76,25 @@
             <div class="support_line4">«ПЛОДОТВОРНАЯ ДЕБЮТНАЯ ИДЕЯ»</div>
           </div>
           <div class="support_tournament-image">
-            <img src="./assets/images/championship.png" alt="championship" />
+            <img
+              src="./assets/images/championship.png"
+              alt="Шахматный турнир"
+            />
           </div>
         </div>
+
         <div class="container simultaneous_container">
           <div class="simultaneous_photo">
-            <img class="player" src="./assets/images/player.svg" alt="" />
-            <img class="hand" src="./assets/images/hand.png" alt="" />
+            <img
+              class="player"
+              src="./assets/images/player.svg"
+              alt="Гроссмейстер О. Бендер"
+            />
+            <img
+              class="hand"
+              src="./assets/images/hand.png"
+              alt="Рука с шахматной фигурой"
+            />
           </div>
           <div class="simultaneous_info">
             <h2 class="simultaneous_title">
@@ -128,6 +139,7 @@
           </div>
         </div>
       </section>
+
       <section class="stages_transformation">
         <div class="container">
           <div class="stages_header">
@@ -170,7 +182,6 @@
                   Размещение гаражей для гостевого автотранспорта
                 </p>
               </div>
-              <!-- <div class="stage_card empty"></div> -->
               <div class="stage_card">
                 <div class="stage_number">6</div>
                 <p class="stage_text">
@@ -193,19 +204,28 @@
           </div>
         </div>
       </section>
+
       <section class="tournament_participants">
         <div class="container">
           <div class="participants_header">
             <h2 class="participants_title">УЧАСТНИКИ ТУРНИРА</h2>
             <div class="participants_pagination">
-              <button class="pagination_arrow prev" id="participantsPrev">
-                <img src="./assets/icons/arrow-left.svg" alt="arrow-left" />
+              <button
+                class="pagination_arrow prev"
+                id="participantsPrev"
+                aria-label="Предыдущий слайд"
+              >
+                <img src="./assets/icons/arrow-left.svg" alt="Назад" />
               </button>
               <span class="pagination_count" id="participantsCounter"
                 >1 / 2</span
               >
-              <button class="pagination_arrow next" id="participantsNext">
-                <img src="./assets/icons/arrow-right.svg" alt="arrow-right" />
+              <button
+                class="pagination_arrow next"
+                id="participantsNext"
+                aria-label="Следующий слайд"
+              >
+                <img src="./assets/icons/arrow-right.svg" alt="Вперёд" />
               </button>
             </div>
           </div>
@@ -332,17 +352,16 @@
           ЗАСЕДАТЕЛИ!&ensp;•&ensp;</span
         >
       </div>
-      <section class="description">
-        <div class="container">
-          <p>
-            Все персонажи, события и цитаты являются вымышленными и не
-            принадлежат создателям сайта. С подробностями можно познакомиться в
-            главе XXXIV романа Ильи Ильфа и Евгения Петрова «Двенадцать
-            стульев».
-          </p>
-        </div>
-      </section>
     </main>
+    <footer class="description">
+      <div class="container">
+        <p>
+          Все персонажи, события и цитаты являются вымышленными и не принадлежат
+          создателям сайта. С подробностями можно познакомиться в главе XXXIV
+          романа Ильи Ильфа и Евгения Петрова «Двенадцать стульев».
+        </p>
+      </div>
+    </footer>
     <script src="./js/app.js"></script>
   </body>
 </html>

@@ -174,8 +174,6 @@ header {
 
 .support_tournament-text {
   flex: 1;
-  width: 764px;
-  height: 195.43px;
   left: calc(50% - 764px / 2 - 229px);
   top: 866.92px;
   font-family: "Merriweather", serif;
@@ -269,7 +267,6 @@ header {
 
 .details_table tr {
   border-bottom: 2px solid #d0d0d0;
-  width: 100%;
 }
 
 .details_table tbody tr:first-child td {
@@ -293,7 +290,6 @@ header {
   color: #313131;
 
   opacity: 0.7;
-  font-weight: 400;
   vertical-align: top;
   padding: 16px 16px 16px 0px;
   width: 306px;
@@ -393,7 +389,6 @@ header {
 
 .stage_card.empty {
   background: transparent;
-  box-shadow: none;
   pointer-events: none;
 }
 

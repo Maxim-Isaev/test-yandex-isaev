@@ -20,12 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let totalSlides = Math.ceil(totalCards / visibleCount);
   let autoTimer = null;
 
-  window.addEventListener("beforeunload", () => {
-    if (autoTimer) {
-      clearInterval(autoTimer);
-    }
-  });
-
   function updateCarousel() {
     visibleCount = getVisibleCardsCount();
     totalSlides = Math.ceil(totalCards / visibleCount);
@@ -89,9 +83,13 @@ document.addEventListener("DOMContentLoaded", function () {
   prevButton.addEventListener("click", manualPrevSlide);
   nextButton.addEventListener("click", manualNextSlide);
 
+  let resizeTimeout;
   window.addEventListener("resize", () => {
-    updateCarousel();
-    resetAutoTimer();
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      updateCarousel();
+      resetAutoTimer();
+    }, 150);
   });
 
   updateCarousel();

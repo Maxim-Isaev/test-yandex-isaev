@@ -35,17 +35,15 @@
             <span class="intro_bottom">ЗЕМНОГО ШАРА</span>
           </h1>
           <p class="intro_description">
-            Оплатите взнос на телеграммы для организации <br />
-            Международного васюкинского турнира по шахматам
+            Оплатите взнос на телеграммы для организации Международного
+            васюкинского турнира по шахматам
           </p>
           <div class="intro_buttons">
             <button type="button" class="button_left">
-              Поддержать <br />
-              шахматную мысль
+              <span>Поддержать шахматную мысль</span>
             </button>
             <button type="button" class="button_right">
-              Подробнее <br />
-              о турнире
+              <span>Подробнее о турнире</span>
             </button>
           </div>
         </div>
@@ -75,11 +73,19 @@
             <div class="support_line3">ТУРНИР ПОСЕТИТЕ ЛЕКЦИЮ НА ТЕМУ:</div>
             <div class="support_line4">«ПЛОДОТВОРНАЯ ДЕБЮТНАЯ ИДЕЯ»</div>
           </div>
+          <div class="support_tournament-text-mobile">
+            <div class="support_line1">ЧТОБЫ ПОДДЕРЖАТЬ</div>
+            <div class="support_line2">МЕЖДУНАРОДНЫЙ ВАСЮКИНСКИЙ ТУРНИР</div>
+          </div>
           <div class="support_tournament-image">
             <img
               src="./assets/images/championship.png"
               alt="Шахматный турнир"
             />
+          </div>
+          <div class="support_tournament-text-mobile-2">
+            <div class="support_line3">ПОСЕТИТЕ ЛЕКЦИЮ НА ТЕМУ:</div>
+            <div class="support_line4">«ПЛОДОТВОРНАЯ ДЕБЮТНАЯ ИДЕЯ»</div>
           </div>
         </div>
 
@@ -133,6 +139,34 @@
               </tbody>
             </table>
 
+            <!-- Мобильный список (виден только на экранах до 768px) -->
+            <div class="details-list-mobile">
+              <div class="detail-item-mobile">
+                <div class="detail-label-mobile">Место проведения:</div>
+                <div class="detail-value-mobile">Клуб «Картонажник»</div>
+              </div>
+              <div class="detail-item-mobile">
+                <div class="detail-label-mobile">Дата и время мероприятия:</div>
+                <div class="detail-value-mobile">22 июня 1927 г. в 18:00</div>
+              </div>
+              <div class="detail-item-mobile">
+                <div class="detail-label-mobile">
+                  Стоимость входных билетов:
+                </div>
+                <div class="detail-value-mobile">20 коп.</div>
+              </div>
+              <div class="detail-item-mobile">
+                <div class="detail-label-mobile">Плата за игру:</div>
+                <div class="detail-value-mobile">50 коп.</div>
+              </div>
+              <div class="detail-item-mobile">
+                <div class="detail-label-mobile">Взнос на телеграммы:</div>
+                <div class="detail-value-mobile">
+                  <span class="old_price">100 руб.</span> 21 руб. 16 коп.
+                </div>
+              </div>
+            </div>
+
             <p class="contact_info">
               По всем вопросам обращаться в администрацию к К. Михельсону
             </p>
@@ -145,8 +179,7 @@
           <div class="stages_header">
             <h2 class="stages_title">ЭТАПЫ ПРЕОБРАЖЕНИЯ ВАСЮКОВ</h2>
             <span class="stages_subtitle">
-              Будущие источники <br />
-              обогащения васюкинцев
+              Будущие источники обогащения васюкинцев
             </span>
           </div>
 
@@ -200,6 +233,73 @@
             </div>
             <div class="stages_plane">
               <img src="./assets/images/plane.svg" alt="Самолёт" />
+            </div>
+          </div>
+
+          <!-- Мобильная карусель этапов (только на экранах до 768px) -->
+          <div class="stages-mobile-carousel">
+            <div class="stages_plane">
+              <img src="./assets/images/plane.svg" alt="Самолёт" />
+            </div>
+            <div class="stages-mobile-cards" id="stagesMobileCards">
+              <div class="stage_card">
+                <div class="stage_number">1</div>
+                <p class="stage_text">
+                  Строительство железнодорожной магистрали Москва-Васюки
+                </p>
+                <div class="stage_number">2</div>
+                <p class="stage_text">
+                  Открытие фешенебельной гостиницы «Проходная пешка» и других
+                  небоскрёбов
+                </p>
+              </div>
+              <div class="stage_card tall">
+                <div class="stage_number">3</div>
+                <p class="stage_text">
+                  Поднятие сельского хозяйства в радиусе на тысячу километров:
+                  производство овощей, фруктов, икры, шоколадных конфет
+                </p>
+              </div>
+              <div class="stage_card">
+                <div class="stage_number">4</div>
+                <p class="stage_text">Строительство дворца для турнира</p>
+                <div class="stage_number">5</div>
+                <p class="stage_text">
+                  Размещение гаражей для гостевого автотранспорта
+                </p>
+              </div>
+              <div class="stage_card">
+                <div class="stage_number">6</div>
+                <p class="stage_text">
+                  Постройка сверхмощной радиостанции для передачи всему миру
+                  сенсационных результатов
+                </p>
+              </div>
+              <div class="stage_card wide">
+                <div class="stage_number">7</div>
+                <p class="stage_text">
+                  Создание аэропорта «Большие Васюки» с регулярным отправлением
+                  почтовых самолётов и дирижаблей во все концы света, включая
+                  Лос-Анжелос и Мельбурн
+                </p>
+              </div>
+            </div>
+            <div class="stages-mobile-pagination">
+              <button
+                class="stages-mobile-arrow stages-mobile-prev"
+                id="stagesMobilePrev"
+              >
+                <img src="./assets/icons/arrow-left.svg" alt="<" />
+              </button>
+              <span class="stages-mobile-counter" id="stagesMobileCounter"
+                >1 / 7</span
+              >
+              <button
+                class="stages-mobile-arrow stages-mobile-next"
+                id="stagesMobileNext"
+              >
+                <img src="./assets/icons/arrow-right.svg" alt=">" />
+              </button>
             </div>
           </div>
         </div>
@@ -333,6 +433,17 @@
                 <button class="card_button">Подробнее</button>
               </div>
             </div>
+          </div>
+          <div class="participants_pagination-mobile">
+            <button class="pagination_arrow prev" id="participantsPrevMobile">
+              <img src="./assets/icons/arrow-left.svg" alt="Назад" />
+            </button>
+            <span class="pagination_count" id="participantsCounterMobile"
+              >1 / 2</span
+            >
+            <button class="pagination_arrow next" id="participantsNextMobile">
+              <img src="./assets/icons/arrow-right.svg" alt="Вперёд" />
+            </button>
           </div>
         </div>
       </section>

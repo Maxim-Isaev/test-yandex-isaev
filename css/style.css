@@ -33,7 +33,7 @@ header {
   flex-wrap: wrap;
   align-items: flex-end;
   justify-content: space-between;
-  padding-top: 26px;
+  margin-top: 26px;
 }
 
 /* intro */
@@ -55,7 +55,6 @@ header {
   font-size: 60px;
   line-height: 110%;
   margin-bottom: 24px;
-  /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
 }
 
 .intro_top,
@@ -135,6 +134,17 @@ header {
   color: #ffffff;
 }
 
+.button_left span,
+.button_right span {
+  max-width: 165px;
+  display: inline-block;
+  word-break: break-word;
+}
+
+.button_right span {
+  max-width: 90px;
+}
+
 @keyframes ticker {
   from {
     transform: translateX(0);
@@ -174,8 +184,6 @@ header {
 
 .support_tournament-text {
   flex: 1;
-  left: calc(50% - 764px / 2 - 229px);
-  top: 866.92px;
   font-family: "Merriweather", serif;
   font-style: normal;
   font-weight: 400;
@@ -456,7 +464,6 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: baseline;
   margin-bottom: 60px;
 }
 
@@ -595,4 +602,372 @@ header {
   line-height: 120%;
   color: #313131;
   opacity: 0.6;
+}
+
+.stages-mobile-carousel {
+  display: none;
+}
+
+.support_tournament-text-mobile {
+  display: none;
+}
+
+.support_tournament-text-mobile-2 {
+  display: none;
+}
+
+.participants_pagination-mobile {
+  display: none;
+}
+
+.details-list-mobile {
+  display: none;
+}
+
+/* ===== АДАПТИВ ДЛЯ ТЕЛЕФОНОВ (до 768px) ===== */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .header_container {
+    margin-top: 18px;
+  }
+
+  .header_container img {
+    width: 213px;
+  }
+
+  /* intro */
+  .intro {
+    padding-top: 90px;
+    height: 774px;
+    background-size: 713px;
+    background-position: right -2px bottom 0px;
+  }
+  .intro_title {
+    font-size: 36px;
+  }
+  .intro_centre {
+    max-width: 100%;
+    text-align: center;
+    margin-left: 0;
+  }
+  .intro_bottom {
+    max-width: 100%;
+    text-align: right;
+  }
+  .intro_description {
+    max-width: 100%;
+    text-align: left;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+    margin-bottom: 32px;
+  }
+
+  .intro_buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .button_left,
+  .button_right {
+    width: 100%;
+    height: 47px;
+    font-size: 16px;
+  }
+
+  .button_right {
+    background: #ffffff;
+    border-color: #ffffff;
+  }
+
+  .button_left span,
+  .button_right span {
+    max-width: 249px;
+    display: inline-block;
+    word-break: break-word;
+  }
+
+  .running_line {
+    font-size: 16px;
+    padding: 12px 8px;
+    height: auto;
+    animation-duration: 40s;
+  }
+
+  /* support_tournament */
+  .support_tournament {
+    padding: 48px 0 80px;
+  }
+
+  .support_tournament-container {
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 34px;
+  }
+  .support_tournament-text-mobile,
+  .support_tournament-text-mobile-2 {
+    display: block;
+    flex: 1;
+    font-family: "Merriweather", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 135%;
+    color: #313131;
+    text-transform: uppercase;
+  }
+
+  .support_tournament-text {
+    display: none;
+  }
+
+  .support_tournament-image {
+    max-width: 100%;
+  }
+
+  /* simultaneous game */
+  .simultaneous_container {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .simultaneous_photo {
+    width: 100%;
+    text-align: center;
+  }
+  .simultaneous_photo .player {
+    margin: -22px 0 0 -20px;
+    width: 410px;
+  }
+  .simultaneous_photo .hand {
+    position: absolute;
+    left: 72%;
+    transform: translateX(-50%);
+    top: auto;
+    bottom: -47px;
+    width: 219px;
+  }
+  .simultaneous_info {
+    max-width: 100%;
+  }
+  .simultaneous_title {
+    font-size: 28px;
+    margin-bottom: 44px;
+  }
+  .table_label {
+    width: 40%;
+    font-size: 16px;
+    padding-right: 12px;
+  }
+  .table_value {
+    font-size: 16px;
+    padding: 12px;
+  }
+  .contact_info {
+    font-size: 16px;
+  }
+
+  .stages_transformation {
+    margin-bottom: 80px;
+  }
+  .stages_grid_wrapper .stages_grid,
+  .stages_grid_wrapper .stages_plane {
+    display: none;
+  }
+  .stages-mobile-carousel {
+    display: block;
+    position: relative;
+    margin-top: 20px;
+  }
+  .stages-mobile-cards {
+    display: flex;
+    overflow: hidden;
+    gap: 16px;
+    transition: transform 0.3s ease;
+  }
+  .stages_plane {
+    position: absolute;
+    bottom: 227px;
+    right: -22px;
+    width: 380px;
+    z-index: 2;
+  }
+
+  .stage_text {
+    font-size: 18px;
+  }
+
+  .stages-mobile-cards .stage_card {
+    flex: 0 0 100%;
+    margin: 0;
+    background-image:
+      url("../assets/images/background.png"), url(../assets/images/paper.png);
+    background-blend-mode: color-burn, normal;
+    padding: 62px 24px 34px 20px;
+    box-sizing: border-box;
+  }
+  .stages-mobile-cards .stage_card.wide {
+    grid-column: auto;
+  }
+  .stages-mobile-cards .stage_card.wide .stage_text {
+    width: auto;
+  }
+  .stages-mobile-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  .stages-mobile-arrow {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #313131;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .stages-mobile-arrow:hover {
+    background: #fbce51;
+  }
+  .stages-mobile-arrow:disabled {
+    background: #d6d6d6;
+    cursor: not-allowed;
+  }
+  .stages-mobile-counter {
+    font-family: "Golos Text", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #313131;
+  }
+
+  .stages_header {
+    display: block !important;
+    margin-bottom: 148px;
+  }
+  .stages_title {
+    width: 100% !important;
+    font-style: normal;
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  .stages_subtitle {
+    position: static !important;
+    text-align: left !important;
+    font-size: 18px;
+    max-width: 100% !important;
+  }
+
+  /* tournament participants */
+
+  .participants_pagination {
+    display: none;
+  }
+
+  .participants_pagination-mobile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    justify-content: center;
+    margin-bottom: 100px;
+  }
+
+  .tournament_participants {
+    margin-bottom: 60px;
+    padding: 0;
+  }
+  .participants_header {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  .participants_title {
+    font-size: 36px;
+    text-align: left;
+  }
+
+  .participant_card {
+    flex: 0 0 100%;
+  }
+  .card_photo {
+    width: 244px;
+    height: 244px;
+    margin-bottom: 16px;
+  }
+  .card_name {
+    font-size: 24px;
+  }
+
+  .card_title {
+    font-size: 20px;
+  }
+  .card_button {
+    width: 113px;
+    height: 35px;
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+
+  /* footer */
+  .description {
+    padding: 30px 0 50px;
+  }
+  .description p {
+    font-size: 14px;
+  }
+
+  .details_table {
+    display: none;
+  }
+  .details-list-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .detail-item-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #d0d0d0;
+  }
+  .detail-item-mobile:last-child {
+    border-bottom: none;
+  }
+
+  .detail-label-mobile {
+    font-family: "Golos Text", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+
+    color: #313131;
+    opacity: 0.7;
+  }
+  .detail-value-mobile {
+    font-family: "Golos Text", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+
+    color: #313131;
+  }
+
+  .detail-value-mobile .old_price {
+    text-decoration: line-through;
+    text-decoration-color: #f54932;
+    color: #313131;
+    margin-right: 12px;
+  }
 }

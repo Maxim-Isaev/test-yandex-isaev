@@ -103,6 +103,10 @@ document.addEventListener("DOMContentLoaded", function () {
     btnLeft.addEventListener("click", (e) => {
       e.preventDefault();
       const target = document.querySelector(".support_tournament-text");
+      const isMobile = window.innerWidth <= 768;
+      const target = isMobile
+        ? document.querySelector(".support_tournament-text-mobile")
+        : document.querySelector(".support_tournament-text");
       if (target) {
         target.scrollIntoView({ behavior: "smooth", block: "start" });
       }
@@ -119,3 +123,50 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// Карусель этапов (мобильная)
+(function () {
+  const cardsContainer = document.getElementById("stagesMobileCards");
+  const prevButton = document.getElementById("stagesMobilePrev");
+  const nextButton = document.getElementById("stagesMobileNext");
+  const counterSpan = document.getElementById("stagesMobileCounter");
+
+  if (!cardsContainer || !prevButton || !nextButton || !counterSpan) return;
+
+  const cards = Array.from(cardsContainer.children);
+  const totalCards = cards.length;
+  let currentIndex = 0;
+
+  function updateMobileStages() {
+    if (!cards[0]) return;
+    const cardWidth = cards[0].offsetWidth;
+    const gap = parseFloat(getComputedStyle(cardsContainer).gap) || 0;
+    const slideWidth = cardWidth + gap;
+    const newTranslate = -currentIndex * slideWidth;
+    cardsContainer.style.transform = `translateX(${newTranslate}px)`;
+    counterSpan.textContent = `${currentIndex + 1} / ${totalCards}`;
+    prevButton.disabled = currentIndex === 0;
+    nextButton.disabled = currentIndex === totalCards - 1;
+  }
+
+  prevButton.addEventListener("click", () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateMobileStages();
+    }
+  });
+  nextButton.addEventListener("click", () => {
+    if (currentIndex < totalCards - 1) {
+      currentIndex++;
+      updateMobileStages();
+    }
+  });
+  let resizeTimeout;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      if (window.innerWidth <= 768) updateMobileStages();
+    }, 150);
+  });
+  if (window.innerWidth <= 768) updateMobileStages();
+})();

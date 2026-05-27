@@ -96,4 +96,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
   updateCarousel();
   startAutoTimer();
+
+  // Плавный скролл по кнопкам
+  const btnLeft = document.querySelector(".button_left");
+  const btnRight = document.querySelector(".button_right");
+
+  if (btnLeft) {
+    btnLeft.addEventListener("click", (e) => {
+      e.preventDefault();
+      const target = document.querySelector(".support_tournament-text");
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  }
+
+  if (btnRight) {
+    btnRight.addEventListener("click", (e) => {
+      e.preventDefault();
+      const target = document.querySelector(".stages_transformation");
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  }
 });

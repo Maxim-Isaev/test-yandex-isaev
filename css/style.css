@@ -1,6 +1,7 @@
 /* reset & base */
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -37,10 +38,14 @@ header {
 
 /* intro */
 .intro {
-  max-width: 1920px;
   width: 100%;
   height: 700px;
   background-color: #e9ded4;
+  background-image:
+    url("../assets/images/background.png"), url("../assets/images/main.svg");
+  background-repeat: repeat, no-repeat;
+  background-position: center, center;
+  background-blend-mode: color-burn, normal;
   padding-top: 124px;
 }
 
@@ -50,6 +55,7 @@ header {
   font-size: 60px;
   line-height: 110%;
   margin-bottom: 24px;
+  /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
 }
 
 .intro_top,
@@ -129,37 +135,6 @@ header {
   color: #ffffff;
 }
 
-.ellipse {
-  position: absolute;
-  width: 660px;
-  height: 660px;
-  right: 0;
-  top: -44px;
-  background: #fbce51;
-  border-radius: 50%;
-}
-
-.ellipse img {
-  position: absolute;
-  left: -8.5%;
-  top: 6.61%;
-  mix-blend-mode: overlay;
-}
-
-@media (max-width: 1600px) {
-  .ellipse {
-    width: 500px;
-    height: 500px;
-  }
-}
-
-@media (max-width: 768px) {
-  .ellipse {
-    width: 300px;
-    height: 300px;
-    right: -150px;
-  }
-}
 @keyframes ticker {
   from {
     transform: translateX(0);
@@ -182,10 +157,304 @@ header {
   animation: ticker 60s linear infinite;
 }
 
+/* support_tournament */
+.support_tournament {
+  padding: 80px 0px 200px;
+  background-color: #ffffff;
+}
+
+.support_tournament-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+  margin-bottom: 64px;
+}
+
+.support_tournament-text {
+  flex: 1;
+  width: 764px;
+  height: 195.43px;
+  left: calc(50% - 764px / 2 - 229px);
+  top: 866.92px;
+  font-family: "Merriweather", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 135%;
+  color: #313131;
+  text-transform: uppercase;
+}
+
+.support_line4 {
+  color: #f54932;
+}
+
+.support_tournament-image {
+  flex-shrink: 0;
+  max-width: 400px;
+}
+
+.support_tournament-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+}
+
+.simultaneous_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 17px;
+}
+
+.simultaneous_photo {
+  position: relative;
+  display: inline-block;
+}
+
+.simultaneous_photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../assets/images/background.png");
+  background-repeat: repeat;
+  background-size: auto;
+  mix-blend-mode: color-burn;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.simultaneous_photo .player {
+  margin-top: -47px;
+  margin-left: -23px;
+  display: block;
+}
+
+.simultaneous_photo .hand {
+  position: absolute;
+  left: 200px;
+  top: 332px;
+  margin: 0;
+}
+
+.simultaneous_info {
+  flex: 1.2;
+  max-width: 704px;
+}
+
+.simultaneous_title {
+  font-family: "Merriweather", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 135%;
+  text-transform: uppercase;
+  color: #313131;
+  margin-bottom: 60px;
+}
+
+.simultaneous_title .red {
+  color: #f54932;
+}
+
+.details_table {
+  border-collapse: collapse;
+  font-family: "Golos Text", sans-serif;
+  font-size: 18px;
+  margin-bottom: 48px;
+  width: 695px;
+}
+
+.details_table tr {
+  border-bottom: 2px solid #d0d0d0;
+  width: 100%;
+}
+
+.details_table tbody tr:first-child td {
+  padding-top: 0;
+}
+
+.details_table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.details_table tbody tr:last-child td {
+  padding-bottom: 0;
+}
+
+.table_label {
+  font-family: "Golos Text";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  color: #313131;
+
+  opacity: 0.7;
+  font-weight: 400;
+  vertical-align: top;
+  padding: 16px 16px 16px 0px;
+  width: 306px;
+}
+
+.table_value {
+  border-left: 2px solid #d0d0d0;
+
+  font-family: "Golos Text";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: #313131;
+  padding: 16px;
+}
+
+.old_price {
+  text-decoration: line-through;
+  text-decoration-color: #f54932;
+  color: #313131;
+  margin-right: 12px;
+  font-family: "Golos Text";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+}
+
+.contact_info {
+  font-family: "Golos Text", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  color: #3057a2;
+}
+
+/* stages_transformation */
+.stages_transformation {
+  background-color: #ffffff;
+  margin-bottom: 200px;
+}
+
+.stages_header {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 54px;
+}
+
+.stages_title {
+  display: block;
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-size: 54px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #313131;
+  width: 806px;
+  margin: 0;
+}
+
+.stages_subtitle {
+  font-family: "Golos Text", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #3057a2;
+  max-width: 280px;
+  flex-shrink: 0;
+  position: absolute;
+  left: 302px;
+  top: 64px;
+}
+
+.stages_grid_wrapper {
+  position: relative;
+}
+
+.stages_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.stage_card {
+  background-image:
+    url("../assets/images/background.png"), url(../assets/images/paper.png);
+  background-position: center, center;
+  background-blend-mode: color-burn, normal;
+  padding: 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  transition: transform 0.2s;
+}
+
+.stage_card.empty {
+  background: transparent;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.stage_number {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Golos Text", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #313131;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.stage_text {
+  font-family: "Golos Text", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  color: #313131;
+  margin: 0;
+}
+
+.stage_card.wide {
+  grid-column: span 2;
+}
+
+.stage_card.wide .stage_text {
+  width: 446px;
+}
+
+.stage_card.tall {
+  grid-row: span 2;
+}
+
+.stages_plane {
+  position: absolute;
+  bottom: 4px;
+  right: -59px;
+  width: 380px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.stages_plane img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* tournament_participants */
 .tournament_participants {
   background-color: #ffffff;
-  padding: 140px 0;
+  margin-bottom: 138px;
+  padding: 2px;
 }
 
 .participants_header {
@@ -319,8 +588,12 @@ header {
 }
 
 /* description footer */
+.description {
+  background: #e9ded4;
+  padding: 40px 0 72px;
+}
+
 .description p {
-  margin: 40px 0 72px;
   font-family: "Golos Text", sans-serif;
   font-weight: 400;
   font-size: 16px;

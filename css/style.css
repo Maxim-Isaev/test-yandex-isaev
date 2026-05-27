@@ -738,6 +738,8 @@ header {
   .simultaneous_photo {
     width: 100%;
     text-align: center;
+    position: relative;
+    display: inline-block;
   }
   .simultaneous_photo .player {
     margin: -22px 0 0 -20px;
@@ -745,10 +747,9 @@ header {
   }
   .simultaneous_photo .hand {
     position: absolute;
-    left: 72%;
-    transform: translateX(-50%);
-    top: auto;
-    bottom: -47px;
+    left: 154px;
+    top: 273px;
+    margin: 0;
     width: 219px;
   }
   .simultaneous_info {
@@ -781,17 +782,54 @@ header {
   .stages-mobile-carousel {
     display: block;
     position: relative;
-    margin-top: 20px;
+    overflow: hidden;
   }
+  .stages-grid-mobile {
+    display: block;
+    position: relative;
+  }
+
   .stages-mobile-cards {
     display: flex;
-    overflow: hidden;
-    gap: 16px;
+    gap: 40px;
     transition: transform 0.3s ease;
+    width: 335px;
+    height: 300px;
+    margin: 0 auto;
   }
+
+  .stages-mobile-dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .stages-mobile-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #d9d9d9;
+    transition: background 0.2s;
+    cursor: pointer;
+  }
+  .stages-mobile-dot.active {
+    background: #313131;
+  }
+
+  .stages-mobile-cards .stage_card.double {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .stages-mobile-cards .stage_item {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+  }
+
   .stages_plane {
     position: absolute;
-    bottom: 227px;
+    bottom: 297px;
     right: -22px;
     width: 380px;
     z-index: 2;
@@ -820,12 +858,12 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 16px;
     margin-top: 30px;
   }
   .stages-mobile-arrow {
-    width: 44px;
-    height: 44px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background: #313131;
     border: none;
@@ -835,9 +873,9 @@ header {
     cursor: pointer;
     transition: background 0.2s;
   }
-  .stages-mobile-arrow:hover {
+  /* .stages-mobile-arrow:hover {
     background: #fbce51;
-  }
+  } */
   .stages-mobile-arrow:disabled {
     background: #d6d6d6;
     cursor: not-allowed;

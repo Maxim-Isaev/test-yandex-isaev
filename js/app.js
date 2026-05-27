@@ -102,7 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (btnLeft) {
     btnLeft.addEventListener("click", (e) => {
       e.preventDefault();
-      const target = document.querySelector(".support_tournament-text");
       const isMobile = window.innerWidth <= 768;
       const target = isMobile
         ? document.querySelector(".support_tournament-text-mobile")
@@ -125,17 +124,33 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Карусель этапов (мобильная)
-(function () {
+document.addEventListener("DOMContentLoaded", function () {
   const cardsContainer = document.getElementById("stagesMobileCards");
   const prevButton = document.getElementById("stagesMobilePrev");
   const nextButton = document.getElementById("stagesMobileNext");
-  const counterSpan = document.getElementById("stagesMobileCounter");
+  const dotsContainer = document.getElementById("stagesMobileDots");
 
-  if (!cardsContainer || !prevButton || !nextButton || !counterSpan) return;
+  if (!cardsContainer || !prevButton || !nextButton || !dotsContainer) return;
 
   const cards = Array.from(cardsContainer.children);
   const totalCards = cards.length;
   let currentIndex = 0;
+
+  function generateDots() {
+    dotsContainer.innerHTML = "";
+    for (let i = 0; i < totalCards; i++) {
+      const dot = document.createElement("div");
+      dot.classList.add("stages-mobile-dot");
+      if (i === currentIndex) dot.classList.add("active");
+      dot.addEventListener("click", () => {
+        if (i !== currentIndex) {
+          currentIndex = i;
+          updateMobileStages();
+        }
+      });
+      dotsContainer.appendChild(dot);
+    }
+  }
 
   function updateMobileStages() {
     if (!cards[0]) return;
@@ -144,11 +159,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const slideWidth = cardWidth + gap;
     const newTranslate = -currentIndex * slideWidth;
     cardsContainer.style.transform = `translateX(${newTranslate}px)`;
-    counterSpan.textContent = `${currentIndex + 1} / ${totalCards}`;
+
+    const dots = document.querySelectorAll(".stages-mobile-dot");
+    dots.forEach((dot, idx) => {
+      if (idx === currentIndex) dot.classList.add("active");
+      else dot.classList.remove("active");
+    });
+
     prevButton.disabled = currentIndex === 0;
     nextButton.disabled = currentIndex === totalCards - 1;
   }
-
   prevButton.addEventListener("click", () => {
     if (currentIndex > 0) {
       currentIndex--;
@@ -161,12 +181,11 @@ document.addEventListener("DOMContentLoaded", function () {
       updateMobileStages();
     }
   });
-  let resizeTimeout;
+
   window.addEventListener("resize", () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      if (window.innerWidth <= 768) updateMobileStages();
-    }, 150);
+    if (window.innerWidth <= 768) updateMobileStages();
   });
+
+  generateDots();
   if (window.innerWidth <= 768) updateMobileStages();
-})();
+});

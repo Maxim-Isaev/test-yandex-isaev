@@ -237,69 +237,77 @@
           </div>
 
           <!-- Мобильная карусель этапов (только на экранах до 768px) -->
-          <div class="stages-mobile-carousel">
+          <div class="stages-grid-mobile">
             <div class="stages_plane">
               <img src="./assets/images/plane.svg" alt="Самолёт" />
             </div>
-            <div class="stages-mobile-cards" id="stagesMobileCards">
-              <div class="stage_card">
-                <div class="stage_number">1</div>
-                <p class="stage_text">
-                  Строительство железнодорожной магистрали Москва-Васюки
-                </p>
-                <div class="stage_number">2</div>
-                <p class="stage_text">
-                  Открытие фешенебельной гостиницы «Проходная пешка» и других
-                  небоскрёбов
-                </p>
+            <div class="stages-mobile-carousel">
+              <div class="stages-mobile-cards" id="stagesMobileCards">
+                <div class="stage_card double">
+                  <div class="stage_item">
+                    <div class="stage_number">1</div>
+                    <p class="stage_text">
+                      Строительство железнодорожной магистрали Москва-Васюки
+                    </p>
+                  </div>
+                  <div class="stage_item">
+                    <div class="stage_number">2</div>
+                    <p class="stage_text">
+                      Открытие фешенебельной гостиницы «Проходная пешка» и
+                      других небоскрёбов
+                    </p>
+                  </div>
+                </div>
+                <div class="stage_card">
+                  <div class="stage_number">3</div>
+                  <p class="stage_text">
+                    Поднятие сельского хозяйства в радиусе на тысячу километров:
+                    производство овощей, фруктов, икры, шоколадных конфет
+                  </p>
+                </div>
+                <div class="stage_card double">
+                  <div class="stage_item">
+                    <div class="stage_number">4</div>
+                    <p class="stage_text">Строительство дворца для турнира</p>
+                  </div>
+                  <div class="stage_item">
+                    <div class="stage_number">5</div>
+                    <p class="stage_text">
+                      Размещение гаражей для гостевого автотранспорта
+                    </p>
+                  </div>
+                </div>
+                <div class="stage_card">
+                  <div class="stage_number">6</div>
+                  <p class="stage_text">
+                    Постройка сверхмощной радиостанции для передачи всему миру
+                    сенсационных результатов
+                  </p>
+                </div>
+                <div class="stage_card">
+                  <div class="stage_number">7</div>
+                  <p class="stage_text">
+                    Создание аэропорта «Большие Васюки» с регулярным
+                    отправлением почтовых самолётов и дирижаблей во все концы
+                    света, включая Лос-Анжелос и Мельбурн
+                  </p>
+                </div>
               </div>
-              <div class="stage_card tall">
-                <div class="stage_number">3</div>
-                <p class="stage_text">
-                  Поднятие сельского хозяйства в радиусе на тысячу километров:
-                  производство овощей, фруктов, икры, шоколадных конфет
-                </p>
+              <div class="stages-mobile-pagination">
+                <button
+                  class="stages-mobile-arrow stages-mobile-prev"
+                  id="stagesMobilePrev"
+                >
+                  <img src="./assets/icons/arrow-left.svg" alt="<" />
+                </button>
+                <div class="stages-mobile-dots" id="stagesMobileDots"></div>
+                <button
+                  class="stages-mobile-arrow stages-mobile-next"
+                  id="stagesMobileNext"
+                >
+                  <img src="./assets/icons/arrow-right.svg" alt=">" />
+                </button>
               </div>
-              <div class="stage_card">
-                <div class="stage_number">4</div>
-                <p class="stage_text">Строительство дворца для турнира</p>
-                <div class="stage_number">5</div>
-                <p class="stage_text">
-                  Размещение гаражей для гостевого автотранспорта
-                </p>
-              </div>
-              <div class="stage_card">
-                <div class="stage_number">6</div>
-                <p class="stage_text">
-                  Постройка сверхмощной радиостанции для передачи всему миру
-                  сенсационных результатов
-                </p>
-              </div>
-              <div class="stage_card wide">
-                <div class="stage_number">7</div>
-                <p class="stage_text">
-                  Создание аэропорта «Большие Васюки» с регулярным отправлением
-                  почтовых самолётов и дирижаблей во все концы света, включая
-                  Лос-Анжелос и Мельбурн
-                </p>
-              </div>
-            </div>
-            <div class="stages-mobile-pagination">
-              <button
-                class="stages-mobile-arrow stages-mobile-prev"
-                id="stagesMobilePrev"
-              >
-                <img src="./assets/icons/arrow-left.svg" alt="<" />
-              </button>
-              <span class="stages-mobile-counter" id="stagesMobileCounter"
-                >1 / 7</span
-              >
-              <button
-                class="stages-mobile-arrow stages-mobile-next"
-                id="stagesMobileNext"
-              >
-                <img src="./assets/icons/arrow-right.svg" alt=">" />
-              </button>
             </div>
           </div>
         </div>
@@ -434,7 +442,7 @@
               </div>
             </div>
           </div>
-          <div class="participants_pagination-mobile">
+          <!-- <div class="participants_pagination-mobile">
             <button class="pagination_arrow prev" id="participantsPrevMobile">
               <img src="./assets/icons/arrow-left.svg" alt="Назад" />
             </button>
@@ -444,7 +452,7 @@
             <button class="pagination_arrow next" id="participantsNextMobile">
               <img src="./assets/icons/arrow-right.svg" alt="Вперёд" />
             </button>
-          </div>
+          </div> -->
         </div>
       </section>
       <div class="running_line">
